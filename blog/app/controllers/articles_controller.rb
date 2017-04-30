@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @article = Article.new 
+    @article = Article.new
   end
 
 
@@ -16,9 +16,11 @@ class ArticlesController < ApplicationController
   @article = Article.find(params[:id])
   end
 
+  #this is when a 'new' article gets submitted
   def create
     @article = Article.new(article_params)
 
+    #if the article gets saved, go to the article/id, otherwise reload the "new" page
     if @article.save
     redirect_to @article
     else
