@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
 
   def edit
+    #how does this put the params back into their fields on the edit page? 
   @article = Article.find(params[:id])
   end
 
